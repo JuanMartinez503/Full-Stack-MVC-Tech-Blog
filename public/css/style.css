@@ -1,0 +1,21 @@
+
+
+h1 a {
+    margin: 2rem;
+    font-size: 4rem;
+    background-color: #f5f5f5;
+    border: 1px solid;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+
+
+}
+nav a {
+    margin: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: black;
+
+
+}
