@@ -7,13 +7,28 @@ try {
     const dataBlog = await Blog.findAll({
         include: {
             model:User,
-            attributes: ['name']
+            attributes: ['user_name']
         }
         
     })
     const blogs = dataBlog.map(blog=>blog.get({plain:true}))
     res.render('homepage', {blogs,
     logged_in:req.session.logged_in})
+} catch (err) {
+    res.status(500).json(err)
+}
+})
+router.get('/blogs/:id', async(req, res)=>{
+try {
+    const blogData = await Blog.findByPk(req.params.id,{
+        include:{
+            model:User,
+            attributes: ['user_name']
+        }
+        
+    })
+    const blog = blogData.get({plain:true})
+    res.render('blogid', {...blog, logged_in:req.session.logged_in})
 } catch (err) {
     res.status(500).json(err)
 }
