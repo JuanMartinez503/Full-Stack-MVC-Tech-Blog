@@ -7,7 +7,7 @@ try {
     const dataBlog = await Blog.findAll({
         include: {
             model:User,
-            attributes: ['user_name']
+            attributes: ['username']
         }
         
     })
@@ -26,12 +26,12 @@ router.get('/blogs/:id', async (req, res) => {
             model: Comment,
             include: {
               model: User,
-              attributes: ['user_name']
+              attributes: ['username']
             }
           },
           {
             model: User,
-            attributes: ['user_name']
+            attributes: ['username']
           }
         ]
       });
@@ -93,7 +93,7 @@ router.get('/login', (req, res) => {
         const blogData = await Blog.findByPk(req.params.id,{
             include:{
                 model:User,
-                attributes: ['user_name']
+                attributes: ['username']
             }
             
         })
