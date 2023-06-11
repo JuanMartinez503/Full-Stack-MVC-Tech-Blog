@@ -36,21 +36,7 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  const updateButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-update')) {
-      const id = event.target.getAttribute('data-update');
-  
-      const response = await fetch(`/api/blogs/${id}`, {
-        method: 'PUT',
-      });
-  
-      if (response.ok) {
-        document.location.replace('/blogs');
-      } else {
-        alert('Failed to update blog!');
-      }
-    }
-  };
+
   document
     .querySelector('.new-project-form')
     .addEventListener('submit', newFormHandler);
@@ -59,6 +45,3 @@ const newFormHandler = async (event) => {
     .querySelector('.project-list')
     .addEventListener('click', delButtonHandler);
   
-    document
-    .querySelector('.project-list')
-    .addEventListener('click', updateButtonHandler);

@@ -1,6 +1,6 @@
 <!-- Loop over each object in the projects array -->
 {{#each blogs as |blog| }}
-<div class="row mb-4 blog">
+<div class=" m-2 row mb-4 blog">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -11,9 +11,12 @@
     <p>Created by {{blog.user.user_name}} on {{format_date blog.date_created}}</p>
   </div>
   <div class="col-md-7">
-    <p>
+    <h3>
+        <p>
       {{blog.description}}
     </p>
+    </h3>
+  
   </div>
 </div>
 {{/each}}

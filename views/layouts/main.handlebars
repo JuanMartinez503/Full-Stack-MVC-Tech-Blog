@@ -14,7 +14,7 @@
 
 <body class="bg-light">
   <div>
-    <header class="bg-primary" >
+    <header class="bg-primary bg-gradient" >
       <h1 >
         <a href="/">What's up with Tech?</a>
       </h1>
@@ -23,7 +23,7 @@
         <a href="/">Home</a>
         {{#if logged_in}}
         
-        <a href="/">Dashboard</a> |
+        <a href="/blogs">Dashboard</a> 
         <button class="btn btn-danger" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>

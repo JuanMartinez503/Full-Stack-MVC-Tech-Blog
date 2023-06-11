@@ -1,0 +1,24 @@
+<div style="font-size: x-large;" class="m-2 row mb-4 blog">
+  <div class="col-md-5">
+    
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <div> <p>Title:</p>
+              <textarea  class="rounded" id="title">{{title}}</textarea>
+      </div>
+
+    
+
+    <p>Created by {{user.user_name}} on {{format_date date_created}}</p>
+  </div>
+  <div class="col-md-7"> 
+    <div> <p>Description:</p>
+        <textarea  class="rounded"  id="description">
+      {{description}}
+    </textarea>
+    </div>
+  
+  </div>
+  <br>
+  <button id="update" class="col btn btn-warning" data-update="{{id}}">UPDATE</button>
+</div>
+<script src="/js/update.js"></script>
