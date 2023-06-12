@@ -1,11 +1,7 @@
 <div class="m-2 row mb-4 blog">
   <div style="font-size: x-large;" class="rem-2 col-md-5">
-    
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      
-      {{blog.title}}
- 
-
+    <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+    {{blog.title}}
     <p style="font-size: medium;">Created by {{blog.user.username}} on {{format_date blog.date_created}}</p>
   </div>
   <div class="col-md-7">
@@ -13,13 +9,15 @@
       {{blog.description}}
     </p>
   </div>
-  <div>
+  
+  <!-- Display all the comments -->
+  
     <div>{{blog.comment}}</div>
-  </div>
+
   <form>
     <textarea class="text-black rounded rem-3" id="comment" type="text"></textarea>
     <br>
-    <button class="my-2 btn btn-primary" id="commentBtn">Add Comment</button>
+    <button class="my-2 btn btn-primary" data-id="{{blog.id}}" id="commentBtn">Add Comment</button>
   </form>
 </div>
 <script src="/js/addComments.js"></script>

@@ -30,8 +30,15 @@ Blog.init(
         key: 'id',
       },
     },
+    comment_id: { // Add the association to Blog model
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'comment',
+        key: 'id',
+      },
   },
-  {
+},{
+  
     sequelize,
     timestamps: false,
     freezeTableName: true,

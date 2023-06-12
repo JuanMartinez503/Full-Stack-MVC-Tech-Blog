@@ -27,16 +27,16 @@
   </div>
 
   {{#if blogs.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  <div class=" col-md-6 project-list">
+    <h3>Current Blogs:</h3>
 
     {{#each blogs as |blog|}}
-    <div class="row mb-2">
+    <div class="d-flex side-cont p-3 m-3 rounded row mb-2">
       <div class="col-md-8">
         <h4><a href="/update/{{blog.id}}">{{blog.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="delete btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+        <button class="mx-3 delete btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
        
       </div>
     </div>

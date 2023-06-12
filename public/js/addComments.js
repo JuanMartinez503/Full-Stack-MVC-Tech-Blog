@@ -2,6 +2,7 @@ const updateButtonHandler = async (event) => {
   event.preventDefault();
   console.log('hi');
   const comment = document.querySelector('#comment').value.trim();
+  
   if (comment) {
     try {
       const response = await fetch('/api/comment', {
@@ -13,7 +14,9 @@ const updateButtonHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.reload();
+  console.log('hi');
+
+        // document.location.reload();
       } else {
         alert('Failed to add comment!');
       }
