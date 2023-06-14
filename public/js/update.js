@@ -23,3 +23,4 @@ const updateButtonHandler = async (event) => {
 document
 .querySelector('#update')
 .addEventListener('click', updateButtonHandler);
+//these pages updates my based on the info provided

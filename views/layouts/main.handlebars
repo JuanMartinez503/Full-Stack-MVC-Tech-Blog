@@ -9,14 +9,15 @@
 
 
   <link rel="stylesheet" href="/css/style.css">
+  {{!-- this is the main dashboard for all of my pages --}}
 
 </head>
 
 <body class="bg-light">
   <div >
-    <header class="main-cont" >
-      <h1 >
-        <a href="/">What's up with Tech?</a>
+    <header style="font-size: 3rem;" class="main-cont" >
+      <h1 class="text-center main-h1" >
+        What's up with Tech?
       </h1>
       <nav class="p-3">
         <!-- Conditionally render login or logout links -->
@@ -24,6 +25,7 @@
         {{#if logged_in}}
         
         <a href="/blogs">Dashboard</a> 
+
         <button class="btn btn-danger" id="logout">logout</button>
         {{else}}
         <a href="/login">login</a>

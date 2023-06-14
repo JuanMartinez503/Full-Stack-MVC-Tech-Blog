@@ -11,6 +11,9 @@
   </div>
   
   <!-- Display all the comments -->
+    {{#if blog.comments.length}}
+    <h2 class="comment-section">Comments</h2>
+    <div>
   {{#each blog.comments}}
   <div class="side-cont mx-5 my-2 p-2">
     <div class="m-1">{{comment}}</div> 
@@ -19,7 +22,8 @@
 
   </div>
   {{/each}}
-  
+  </div>
+  {{/if}}
   <form class="m-4 ">
     <textarea class="text-black rounded rem-3" id="comment" type="text"></textarea>
     <br>

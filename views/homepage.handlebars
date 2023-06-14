@@ -4,18 +4,18 @@
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      
-      <a href="/blogs/{{blog.id}}">{{blog.title}}</a>
+
+      <a href="/blogs/{{blog.id}}"> {{blog.title}}</a>
     </h2>
 
   </div>
   <div class="col-md-7">
     <h3>
-        <p class="mx-5">
-      {{format_date blog.date_created}}
-    </p>
+      <p class="mx-5">
+       Post Date: {{format_date blog.date_created}}
+      </p>
     </h3>
-  
+
   </div>
 </div>
 {{/each}}

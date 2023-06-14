@@ -22,3 +22,4 @@ Comment.belongsTo(Blog, { foreignKey: "blog_id" }); // Add the association to Bl
 Blog.hasMany(Comment, { foreignKey: "blog_id" });
 
 module.exports = { Comment, User, Blog };
+//these are the tables that were used in the assignment and hw i connected it
