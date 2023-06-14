@@ -11,10 +11,16 @@
   </div>
   
   <!-- Display all the comments -->
-  
-    <div>{{blog.comment}}</div>
+  {{#each blog.comments}}
+  <div class="side-cont mx-5 my-2 p-2">
+    <div class="m-1">{{comment}}</div> 
+    <div class="m-1"> made by {{user.username}} on {{format_date comment_created}} </div>
+    <button class="text-center m-1 btn btn-sm btn-danger deleteButton" data-info="{{id}}">Delete</button>
 
-  <form>
+  </div>
+  {{/each}}
+  
+  <form class="m-4 ">
     <textarea class="text-black rounded rem-3" id="comment" type="text"></textarea>
     <br>
     <button class="my-2 btn btn-primary" data-id="{{blog.id}}" id="commentBtn">Add Comment</button>

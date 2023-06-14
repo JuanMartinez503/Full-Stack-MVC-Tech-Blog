@@ -9,7 +9,7 @@
     backdrop-filter: blur(20px);
     border-radius: 0 0 50px 50px;
     box-shadow: 10px 10px 10px rgba(255, 255, 255, .5);
-    text-shadow: 10px 10px 10px black !important;
+    text-shadow: 10px 10px 12px black !important;
     margin-bottom: 15px;
   }
   .side-cont {

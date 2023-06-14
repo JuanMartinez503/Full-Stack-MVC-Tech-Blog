@@ -1,13 +1,14 @@
-const updateButtonHandler = async (event) => {
+const addComment = async (event) => {
   event.preventDefault();
   console.log('hi');
   const comment = document.querySelector('#comment').value.trim();
-  
+  let  blog_id = event.target.dataset.id
+  blog_id = parseInt(blog_id)
   if (comment) {
     try {
       const response = await fetch('/api/comment', {
         method: 'POST',
-        body: JSON.stringify({ comment }),
+        body: JSON.stringify({ comment, blog_id }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -16,7 +17,7 @@ const updateButtonHandler = async (event) => {
       if (response.ok) {
   console.log('hi');
 
-        // document.location.reload();
+        document.location.reload();
       } else {
         alert('Failed to add comment!');
       }
@@ -26,7 +27,28 @@ const updateButtonHandler = async (event) => {
     }
   }
 };
+const delButtonHandler = async (event) => {
+  event.preventDefault()
+  console.log('click');
+  if (event.target.hasAttribute('data-info')) {
+    const id = event.target.getAttribute('data-info');
+
+    const response = await fetch(`/api/comment/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to delete comment');
+    }
+  }
+};
+
 
 document
   .querySelector('#commentBtn')
-  .addEventListener('click', updateButtonHandler);
+  .addEventListener('click', addComment);
+
+const deleteBtn = document.querySelectorAll('.deleteButton')
+deleteBtn.forEach(btn=>btn.addEventListener('click', delButtonHandler))
